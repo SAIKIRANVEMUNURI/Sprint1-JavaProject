@@ -1,0 +1,6 @@
+com\capgemini\dd\daotest\TestDisplayRawMaterialOrderDao.class
+com\capgemini\dd\daotest\TestDisplaySupplierDetailsDao.class
+com\capgemini\dd\daotest\TestDisplayProductOrderDao.class
+com\capgemini\dd\servicetest\TestDisplayProductOrderService.class
+com\capgemini\dd\servicetest\TestDisplayRawMaterialOrderService.class
+com\capgemini\dd\servicetest\TestDisplaySupplierDetailsService.class

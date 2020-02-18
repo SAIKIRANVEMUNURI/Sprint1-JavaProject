@@ -1,0 +1,14 @@
+-------------------------------------------------------------------------------
+Test set: com.capgemini.dd.servicetest.TestDisplaySupplierDetailsService
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0 sec <<< FAILURE!
+com.capgemini.dd.servicetest.TestDisplaySupplierDetailsService.testGetId()  Time elapsed: 0 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: array lengths differ, expected: <6> but was: <0>
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:39)
+	at org.junit.jupiter.api.AssertArrayEquals.assertArraysHaveSameLength(AssertArrayEquals.java:423)
+	at org.junit.jupiter.api.AssertArrayEquals.assertArrayEquals(AssertArrayEquals.java:338)
+	at org.junit.jupiter.api.AssertArrayEquals.assertArrayEquals(AssertArrayEquals.java:162)
+	at org.junit.jupiter.api.AssertArrayEquals.assertArrayEquals(AssertArrayEquals.java:158)
+	at org.junit.jupiter.api.Assertions.assertArrayEquals(Assertions.java:1435)
+	at com.capgemini.dd.servicetest.TestDisplaySupplierDetailsService.testGetId(TestDisplaySupplierDetailsService.java:23)
+
