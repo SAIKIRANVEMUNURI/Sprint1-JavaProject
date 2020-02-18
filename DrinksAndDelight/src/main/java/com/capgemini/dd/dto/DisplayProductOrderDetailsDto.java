@@ -5,6 +5,8 @@ import java.time.LocalDate;
 public class DisplayProductOrderDetailsDto 
 
 {
+	//Creating the Product Order Details variables as private.
+
 	private String supplierId1;
 	private String deliveryStatus;
 	private LocalDate startDate;
@@ -16,6 +18,7 @@ public class DisplayProductOrderDetailsDto
 	
 	
 	
+	//Creating parameterized constructor
 	
 	public DisplayProductOrderDetailsDto(String supplierId1, String deliveryStatus, LocalDate startDate, LocalDate endDate,
 			String orderId, String productName, double numberOfUnits, double price) {
@@ -29,6 +32,9 @@ public class DisplayProductOrderDetailsDto
 		this.numberOfUnits = numberOfUnits;
 		this.price = price;
 	}
+	
+	//Getters and Setters for the movie variables.
+
 	public String getSupplierId1() {
 		return supplierId1;
 	}

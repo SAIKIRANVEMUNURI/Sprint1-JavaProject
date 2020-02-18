@@ -44,6 +44,8 @@ public class TestDisplaySupplierDetailsDao
 	@Test
 	public void testGetSupplierDetails2()
 	{
+		// //assertEquals() methods checks that the two objects are equals or not.
+		// Testing for the null case
 		assertEquals(null,objectDao.getDisplaySupplierDetailsDao(9));
 	}
 }

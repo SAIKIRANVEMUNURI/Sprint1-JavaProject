@@ -15,11 +15,14 @@ public class TestDisplayRawMaterialOrderDao
 	DisplayRawMaterialOrderDetailsDao object= new DisplayRawMaterialOrderDetailsDao();
 	@Test
 	
-	public void testGetRawDisplayDao() throws NotFoundException
+	public void testGetRawDisplayDao() 
 	{
 		try
 		{
+			//assertEquals() methods checks that the two objects are equals or not.
+			// Testing by giving a expected value
 		assertEquals("PSID100 Packing LocalDate.of(2020, 02, 15) LocalDate.of(2020, 02, 25) OR100  Coke 25.0 25000.0",object.getRawMaterialDisplay("PSID100","Packing",LocalDate.of(2020, 02, 15),LocalDate.of(2020, 02, 15)));
+		
 		}
 		catch(NotFoundException e)
 		{
@@ -32,7 +35,7 @@ public class TestDisplayRawMaterialOrderDao
 	  
 	  public void testRawDetailsDao() 
 	  {
-		  
+		  // Testing for the Exception created
 		  Throwable exception =assertThrows(
 				  
 				  NotFoundException.class,()->

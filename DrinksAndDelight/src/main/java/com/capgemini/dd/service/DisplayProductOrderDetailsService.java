@@ -21,6 +21,8 @@ public class DisplayProductOrderDetailsService
 			result = object.getProductDisplay(w, x, y, z);
 			if(result==null)
 			{
+				//throwing a NotFoundException if the user input doesnot matches with the Repository data and 
+				//printing the exception message
 				throw new NotFoundException(" SupplierID & Delivery Status are Not Found");
 			}
 			else
@@ -30,7 +32,8 @@ public class DisplayProductOrderDetailsService
 		
 	}
 	
-	
+	// A method to validate the Date
+
 	
 	public boolean validate(String date) throws NotFoundException
 	{

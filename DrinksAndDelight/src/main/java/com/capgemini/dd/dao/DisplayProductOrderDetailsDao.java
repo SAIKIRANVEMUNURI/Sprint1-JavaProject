@@ -11,11 +11,14 @@ public class DisplayProductOrderDetailsDao
 {
 	
 	Repository object = new Repository();
+	
+	//Creating a Set collection
 	Set<DisplayProductOrderDetailsDto> list1= new LinkedHashSet<DisplayProductOrderDetailsDto>();
 	
 	public Set<DisplayProductOrderDetailsDto> getProductDisplay(String a, String b,LocalDate c,LocalDate d) throws NotFoundException
 	{
 	object.addingDisplayProductOrderDetails();	
+	// creating a getProductDisplay and calling a method from Repository
 	Map<Integer,DisplayProductOrderDetailsDto> map1=object.getDisplayProductOrderDetails();
 
 	int count=0;
@@ -41,6 +44,7 @@ public class DisplayProductOrderDetailsDao
 	
 	if(count==0)
 	{
+		//Throwing a NoTFoundexception if user cannot give a correct SupplierID
 		throw new NotFoundException(" SupplierID & Delivery Status are Not Found");
 	}
 	

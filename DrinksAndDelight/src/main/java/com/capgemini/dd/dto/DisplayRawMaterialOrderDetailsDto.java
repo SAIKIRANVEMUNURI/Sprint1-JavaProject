@@ -4,6 +4,8 @@ import java.time.LocalDate;
 
 public class DisplayRawMaterialOrderDetailsDto
 {
+	//Creating the RawMaterial Details variables as private.
+	
 	private String supplierId2;
 	private String deliveryStatus2;
 	private LocalDate startDate2;
@@ -12,6 +14,9 @@ public class DisplayRawMaterialOrderDetailsDto
 	private String productName2;
 	private double numberOfUnits2;
 	private double price2;
+	
+	//Creating parameterized constructor
+	
 	public DisplayRawMaterialOrderDetailsDto(String supplierId2, String deliveryStatus2, LocalDate startDate2,
 			LocalDate endDate2, String orderId2, String productName2, double numberOfUnits2, double price2)
 	{
@@ -25,6 +30,9 @@ public class DisplayRawMaterialOrderDetailsDto
 		this.numberOfUnits2 = numberOfUnits2;
 		this.price2 = price2;
 	}
+	
+	//Getters and Setters for the movie variables.
+
 	public String getSupplierId2() {
 		return supplierId2;
 	}

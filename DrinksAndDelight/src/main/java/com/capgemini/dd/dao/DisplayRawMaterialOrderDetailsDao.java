@@ -13,7 +13,11 @@ public class DisplayRawMaterialOrderDetailsDao
 {
 	
 	Repository object2 = new Repository();
+	
+	//Creating a Set collection
 	Set<DisplayRawMaterialOrderDetailsDto> list2= new LinkedHashSet<DisplayRawMaterialOrderDetailsDto>();
+	
+	// creating a getRawMaterialDisplay and calling a method from Repository
 	public Set<DisplayRawMaterialOrderDetailsDto> getRawMaterialDisplay(String a, String b,LocalDate c,LocalDate d) throws NotFoundException
 	{
 		object2.addingDisplayRawMaterialOrderDetails();
@@ -41,6 +45,8 @@ public class DisplayRawMaterialOrderDetailsDao
 		
 		if(count==0)
 		{
+			//Throwing a NoTFoundexception if user cannot give a correct SupplierID
+
 			throw new NotFoundException(" SupplierID & Delivery Status are Not Found");
 		}
 		}

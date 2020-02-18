@@ -19,6 +19,9 @@ public class TestDisplayProductOrderService
 	{
 	
 	try {
+		
+		//assertEquals() methods checks that the two objects are equals or not.
+		// Testing by giving a expected value
 		assertEquals("PSID100 Packing LocalDate.of(2020, 02, 15) LocalDate.of(2020, 02, 25) OR100  Coke 25.0 25000.0",object.getDisplay("PSID100","Packing",LocalDate.of(2020, 02, 15),LocalDate.of(2020, 02, 15)));
 
 		}
@@ -33,6 +36,9 @@ public class TestDisplayProductOrderService
 	public void testNull()
 	{
 		try {
+			
+			//assertEquals() methods checks that the two objects are equals or not.
+			// Testing for the null case
 			assertEquals(null,object.getDisplay("Pjjb","hgdjv",LocalDate.of(2020, 02, 15),LocalDate.of(2020, 02, 15)));
 		} catch (NotFoundException e) {
 			

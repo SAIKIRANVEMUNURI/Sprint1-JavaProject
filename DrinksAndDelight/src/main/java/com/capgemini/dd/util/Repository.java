@@ -9,10 +9,15 @@ import com.capgemini.dd.dto.DisplayRawMaterialOrderDetailsDto;
 
 
 
-public class Repository 
+public class Repository   //A repository class to store the Data like a Database
 {
 	
+	// Created a Map to store the key and values.
+
 	public static Map<Integer,DisplayProductOrderDetailsDto> displayProductOrderRepository = new HashMap<Integer,DisplayProductOrderDetailsDto>();
+
+	
+	// Created a method to store the data
 
 	public void addingDisplayProductOrderDetails()
 	{
@@ -31,8 +36,12 @@ public class Repository
 	
 	
 	
-	
+	// Created a Map to store the key and values.
+
 	public static Map<Integer,DisplayRawMaterialOrderDetailsDto> displayRawMaterialOrderRepository = new HashMap<Integer,DisplayRawMaterialOrderDetailsDto>();
+
+	
+	// Created a method to store the data
 
 	public void addingDisplayRawMaterialOrderDetails()
 	{

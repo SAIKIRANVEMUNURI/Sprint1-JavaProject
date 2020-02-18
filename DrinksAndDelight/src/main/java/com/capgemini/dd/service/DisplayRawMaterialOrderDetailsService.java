@@ -18,6 +18,8 @@ public class DisplayRawMaterialOrderDetailsService
 		result = object.getRawMaterialDisplay(w, x, y, z);
 		if(result==null)
 		{
+			//throwing a NotFoundException if the user input doesnot matches with the Repository data and 
+			//printing the exception message
 			throw new NotFoundException(" Not Found");
 		}
 		else
@@ -27,6 +29,8 @@ public class DisplayRawMaterialOrderDetailsService
 			
 	}
 	
+	
+	// A method to validate the Date
 	
 	public boolean validate(String date) throws NotFoundException
 	{
