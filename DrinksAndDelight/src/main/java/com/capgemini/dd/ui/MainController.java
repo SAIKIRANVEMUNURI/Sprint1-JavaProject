@@ -27,7 +27,7 @@ public class MainController {
 		System.out.println("4->Terminate");
 		Scanner sc=new Scanner(System.in);
 		int a=sc.nextInt();
-		sc.close();
+		
 		switch(a) 
 		
 		{
