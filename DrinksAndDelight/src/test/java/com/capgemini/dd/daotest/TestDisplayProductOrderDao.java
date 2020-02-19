@@ -38,17 +38,18 @@ public class TestDisplayProductOrderDao
 	  {
 		  
 	  // Testing for the Exception created
+	  
 
 		  Throwable exception =assertThrows(
 				  
 				  NotFoundException.class,()->
 				  {
-				  object.getProductDisplay("PSID100","Packing",LocalDate.of(2020, 02, 15),LocalDate.of(2020, 02, 15));
+				  object.getProductDisplay("PSID","Packi",LocalDate.of(2020, 02, 15),LocalDate.of(2020, 02, 15));
 	              }
 				  
 				  
 		  );
-	//	  assertEquals(" SupplierID & Delivery Status are Not Found",exception.getMessage());
+		  assertEquals(null,exception.getMessage());
 	  }
 	  
 	

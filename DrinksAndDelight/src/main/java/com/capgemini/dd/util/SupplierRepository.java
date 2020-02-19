@@ -12,7 +12,7 @@ public class SupplierRepository  //A repository class to store the Supplier Data
 	
 	
 	// Created a method to store the data
-	public void put()
+	static
 	{
 				
 		supplierMap.put(1, new DisplaySupplierDetailsDto(1,"Daring Drinks","Vizag,Andhrapradesh","9592939955"));

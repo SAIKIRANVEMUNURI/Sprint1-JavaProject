@@ -70,11 +70,10 @@ public class MainController {
 				}
 			catch(NotFoundException e)
 			{
-				
+				e.printLog();
 			}
 			if(obj!=null)
-			System.out.println("<====RAWMATERIAL ORDER DETAILS====>");
-			System.out.print(obj);
+			 System.out.println(obj);
 			continue;
 			
 		case 2:
@@ -116,7 +115,7 @@ public class MainController {
 			}
 			catch(NotFoundException e)
 			{ 
-				
+				e.printLog();
 			}
 			
 			if(obj2!=null)
@@ -126,8 +125,7 @@ public class MainController {
 			
 		case 3:
 			
-			SupplierRepository obj22=new SupplierRepository();
-			obj22.put();
+	
 			Scanner scan=new Scanner(System.in);
 			DisplaySupplierDetailsService obj3=new  DisplaySupplierDetailsService();
 			System.out.println("<===AVAILABLE SUPPLIER ID'S===>");

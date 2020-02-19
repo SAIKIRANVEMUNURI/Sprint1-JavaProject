@@ -27,6 +27,7 @@ public class DisplaySupplierDetailsDao
 		return list2;
 	}
 	
+	
 	public String getDisplaySupplierDetailsDao(Integer id)
 	{
 		String result=null;
@@ -40,6 +41,7 @@ public class DisplaySupplierDetailsDao
 				
 					
 			}
+	
 				
 		 }
 			

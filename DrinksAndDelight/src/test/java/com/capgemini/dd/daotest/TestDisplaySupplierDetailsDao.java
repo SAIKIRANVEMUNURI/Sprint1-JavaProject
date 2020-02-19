@@ -1,8 +1,9 @@
 package com.capgemini.dd.daotest;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.List;
+import java.util.*;
 
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +13,7 @@ public class TestDisplaySupplierDetailsDao
 {
 	
 	DisplaySupplierDetailsDao objectDao = new DisplaySupplierDetailsDao();
-	Integer list [] = {6,5,4,3,2,1};
+	Integer list2 [] = {6,5,4,3,2,1};
 	
 	  
 	  @Test
@@ -25,20 +26,18 @@ public class TestDisplaySupplierDetailsDao
 		 List<Integer>list= objectDao.getId();
 		 
 		 
-		// assertArrayEquals(List,list.toArray());
+		assertArrayEquals(list2,list.toArray());
 		  
 		  
 		}
 		
 	
-	
-	
+		
 	@Test
 	public void testGetSupplierDetails()
 	{
 		assertEquals("1 Daring Drinks Vizag,Andhrapradesh 9592939955",objectDao.getDisplaySupplierDetailsDao(1));
-
-		
+	
 	}
 	
 	@Test

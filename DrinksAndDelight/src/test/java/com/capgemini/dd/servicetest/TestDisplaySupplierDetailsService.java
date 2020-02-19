@@ -2,6 +2,7 @@ package com.capgemini.dd.servicetest;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -20,6 +21,8 @@ public class TestDisplaySupplierDetailsService
 	public void testGetId()
 	{
 		List<Integer> list = objectService.getId();
+		assertArrayEquals(List,list.toArray());
+
 	
 	}
 	
