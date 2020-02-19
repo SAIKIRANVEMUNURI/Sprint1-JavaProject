@@ -7,7 +7,7 @@ public class DisplayProductOrderDetailsDto
 {
 	//Creating the Product Order Details variables as private.
 
-	private String supplierId1;
+	private String distributorId;
 	private String deliveryStatus;
 	private LocalDate startDate;
 	private LocalDate endDate;
@@ -20,10 +20,10 @@ public class DisplayProductOrderDetailsDto
 	
 	//Creating parameterized constructor
 	
-	public DisplayProductOrderDetailsDto(String supplierId1, String deliveryStatus, LocalDate startDate, LocalDate endDate,
+	public DisplayProductOrderDetailsDto(String distributorId, String deliveryStatus, LocalDate startDate, LocalDate endDate,
 			String orderId, String productName, double numberOfUnits, double price) {
 		super();
-		this.supplierId1 = supplierId1;
+		this.distributorId = distributorId;
 		this.deliveryStatus = deliveryStatus;
 		this.startDate = startDate;
 		this.endDate = endDate;
@@ -36,10 +36,10 @@ public class DisplayProductOrderDetailsDto
 	//Getters and Setters for the movie variables.
 
 	public String getSupplierId1() {
-		return supplierId1;
+		return distributorId;
 	}
-	public void setSupplierId1(String supplierId1) {
-		this.supplierId1 = supplierId1;
+	public void setSupplierId1(String distributorId) {
+		this.distributorId = distributorId;
 	}
 	public String getDeliveryStatus() {
 		return deliveryStatus;
@@ -85,7 +85,7 @@ public class DisplayProductOrderDetailsDto
 	}
 	@Override
 	public String toString() {
-		return "DisplayProductOrderDetailsDto [supplierId1=" + supplierId1 + ", deliveryStatus=" + deliveryStatus
+		return "DisplayProductOrderDetailsDto [distributorId=" + distributorId + ", deliveryStatus=" + deliveryStatus
 				+ ", startDate=" + startDate + ", endDate=" + endDate + ", orderId=" + orderId + ", productName="
 				+ productName + ", numberOfUnits=" + numberOfUnits + ", price=" + price + "]\n";
 	}

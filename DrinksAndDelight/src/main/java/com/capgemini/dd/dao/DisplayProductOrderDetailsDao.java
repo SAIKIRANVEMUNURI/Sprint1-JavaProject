@@ -47,7 +47,7 @@ public class DisplayProductOrderDetailsDao
 	if(count==0)
 	{
 		//Throwing a NoTFoundexception if user cannot give a correct SupplierID
-		throw new NotFoundException(" SupplierID & Delivery Status are Not Found");
+		throw new NotFoundException(" DistributorID & Delivery Status are Not Found");
 	}
 	else
 	  return list1;
