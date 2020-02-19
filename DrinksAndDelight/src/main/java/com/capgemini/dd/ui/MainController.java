@@ -11,7 +11,7 @@ import com.capgemini.dd.exceptions.NotFoundException;
 import com.capgemini.dd.service.DisplayProductOrderDetailsService;
 import com.capgemini.dd.service.DisplayRawMaterialOrderDetailsService;
 import com.capgemini.dd.service.DisplaySupplierDetailsService;
-import com.capgemini.dd.util.SupplierRepository;
+
 
 public class MainController {
 
@@ -42,22 +42,24 @@ public class MainController {
 			Scanner scan2 =new Scanner(System.in);
 			String t=scan2.next();
 			System.out.println("Enter StartDate (yyyy-mm-dd):");
+			LocalDate strDate=null;
 
+			while(true)
+			{
 			Scanner scan3 =new Scanner(System.in);
 			String u=scan3.next();
-			LocalDate strDate=null;
-			try 
-				{
-				  		if(object.validate(u))
-				  		{
-				  			strDate=LocalDate.parse(u);
-				  
-				  		}
-				}
-			 catch(NotFoundException e)
-				{
-				 		e.printLog();
-				}
+			if(object.validate(u)) {
+				strDate=LocalDate.parse(u);
+				break;
+			}
+			else {
+				System.out.println("Enter the StartDate in Correct Format(yyyy-mm-dd):");
+			}
+			continue;
+			}
+			
+			
+			
 
 			System.out.println("Enter EndDate (yyyy-mm-dd):");
 			Scanner sc3 =new Scanner(System.in);
@@ -80,29 +82,31 @@ public class MainController {
 			
 			DisplayProductOrderDetailsService object2=new DisplayProductOrderDetailsService();
 			System.out.println("<====TO DISPLAY PRODUCT ORDER DETAILS====>");
-			System.out.println("Enter SupplierId:");
+			System.out.println("Enter DistributorID:");
 			Scanner scc =new Scanner(System.in);
 			String rrrr=scc.next();
 			System.out.println("Enter Delivery Status:");
 			Scanner sc11 =new Scanner(System.in);
 			String tttt=sc11.next();
 			System.out.println("Enter StartDate (yyyy-mm-dd):");
+			LocalDate d1=null;
+
+			while(true)
+			{
 
 			Scanner sc22 =new Scanner(System.in);
 			String uu=sc22.next();
-			LocalDate d1=null;
-			try 
-				{
-						if(object2.validate(uu))
-				  {
-						d1=LocalDate.parse(uu);
-				  
-				  }
-			  }
-			  catch(NotFoundException e)
-				{
-				  		e.printLog();
-				}
+//		
+			if(object2.validate(uu)) {
+				d1=LocalDate.parse(uu);
+				break;
+			}
+			else {
+				System.out.println("Enter the StartDate in Correct Format(yyyy-mm-dd):");
+			}
+			continue;
+			}
+			
 			  
 			System.out.println("Enter EndDate  (yyyy-mm-dd):");
 			Scanner sc33 =new Scanner(System.in);

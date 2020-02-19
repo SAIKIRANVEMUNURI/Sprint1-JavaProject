@@ -30,21 +30,21 @@ public class DisplayRawMaterialOrderDetailsService
 	}
 	
 	
-	// A method to validate the Date
 	
-	public boolean validate(String date) throws NotFoundException
+	// A method to throw exception
+	
+	
+	public boolean validate(String date) 
 	{
-		try
-		{
-		  LocalDate.parse(date);	
-		 return true;
+//		
+		if(date.matches("\\d{4}-\\d{2}-\\d{2}")){
+			return true;
 		}
-		catch(DateTimeParseException dtpe)
-		{
-			throw new NotFoundException("Invalid date");
-						
+		else {
+			return false;
 		}
 	} 
+	
 	
 	
 

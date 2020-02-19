@@ -1,5 +1,7 @@
 package com.capgemini.dd.servicetest;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -49,7 +51,7 @@ public class TestDisplayRawMaterialOrderService
 
 @Test
  
- public void testRawDetailsDao() 
+ public void testRawDetailsservice() 
  {
 	  
 	  Throwable exception =assertThrows(
@@ -61,7 +63,22 @@ public class TestDisplayRawMaterialOrderService
 			  
 			  
 	  );
-	  //	assertEquals(" SupplierID & Delivery Status are Not Found",exception.getMessage());
+	 	assertEquals(null,exception.getMessage());
  }
+
+
+@Test
+public void testDate()
+{
+	 assertTrue(object.validate("2020-02-15"));
+	 
+}
+
+@Test
+public void testDate2()
+{
+	 assertFalse(object.validate("2020/02/15"));
+	 
+}
 
 }
