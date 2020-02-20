@@ -13,7 +13,7 @@ import com.capgemini.dd.exceptions.NotFoundException;
 public class TestDisplayProductOrderDao
 
 {
-	DisplayProductOrderDetailsDao object=new DisplayProductOrderDetailsDao();
+	DisplayProductOrderDetailsDao productDaoObject=new DisplayProductOrderDetailsDao();
 	
 	@Test
 	
@@ -23,7 +23,7 @@ public class TestDisplayProductOrderDao
 	{
 		//assertEquals() methods checks that the two objects are equals or not.
 		// Testing by giving a expected value
-		assertEquals("PSID100 Packing LocalDate.of(2020, 02, 15) LocalDate.of(2020, 02, 25) OR100  Coke 25.0 25000.0",object.getProductDisplay("PSID100","Packing",LocalDate.of(2020, 02, 15),LocalDate.of(2020, 02, 15)));
+		assertEquals("PDID100 Packing 2020-02-15 2020-02-25 OR100  Coke 25.0 25000.0",productDaoObject.getProductDisplay("PSID100","Packing",LocalDate.of(2020, 02, 15),LocalDate.of(2020, 02, 15)));
 	}
 	catch(NotFoundException e)
 	{
@@ -44,12 +44,12 @@ public class TestDisplayProductOrderDao
 				  
 				  NotFoundException.class,()->
 				  {
-				  object.getProductDisplay("PSID","Packi",LocalDate.of(2020, 02, 15),LocalDate.of(2020, 02, 15));
+				  productDaoObject.getProductDisplay("PSID","Packi",LocalDate.of(2020, 02, 15),LocalDate.of(2020, 02, 15));
 	              }
 				  
 				  
 		  );
-		  assertEquals(null,exception.getMessage());
+		  assertEquals(" DistributorID & Delivery Status are Not Found",exception.getMessage());
 	  }
 	  
 	

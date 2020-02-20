@@ -12,7 +12,7 @@ import com.capgemini.dd.dao.DisplaySupplierDetailsDao;
 public class TestDisplaySupplierDetailsDao
 {
 	
-	DisplaySupplierDetailsDao objectDao = new DisplaySupplierDetailsDao();
+	DisplaySupplierDetailsDao supplierDaoObject = new DisplaySupplierDetailsDao();
 	Integer list2 [] = {6,5,4,3,2,1};
 	
 	  
@@ -23,7 +23,7 @@ public class TestDisplaySupplierDetailsDao
 		public void testgetId()
 		{
 		  
-		 List<Integer>list= objectDao.getId();
+		 List<Integer>list= supplierDaoObject.getId();
 		 
 		 
 		assertArrayEquals(list2,list.toArray());
@@ -36,7 +36,7 @@ public class TestDisplaySupplierDetailsDao
 	@Test
 	public void testGetSupplierDetails()
 	{
-		assertEquals("1 Daring Drinks Vizag,Andhrapradesh 9592939955",objectDao.getDisplaySupplierDetailsDao(1));
+		assertEquals("1 Daring Drinks Vizag,Andhrapradesh 9592939955",supplierDaoObject.getDisplaySupplierDetailsDao(1));
 	
 	}
 	
@@ -45,6 +45,6 @@ public class TestDisplaySupplierDetailsDao
 	{
 		// //assertEquals() methods checks that the two objects are equals or not.
 		// Testing for the null case
-		assertEquals(null,objectDao.getDisplaySupplierDetailsDao(9));
+		assertEquals(null,supplierDaoObject.getDisplaySupplierDetailsDao(9));
 	}
 }

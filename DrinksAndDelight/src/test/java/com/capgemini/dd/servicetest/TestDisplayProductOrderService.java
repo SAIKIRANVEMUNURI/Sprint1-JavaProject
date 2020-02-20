@@ -14,7 +14,7 @@ import com.capgemini.dd.service.DisplayProductOrderDetailsService;
 
 public class TestDisplayProductOrderService
 {
-	DisplayProductOrderDetailsService object=new DisplayProductOrderDetailsService();
+	DisplayProductOrderDetailsService productServiceObject=new DisplayProductOrderDetailsService();
 	
 	@Test
 	public void testGetProductService()
@@ -24,7 +24,7 @@ public class TestDisplayProductOrderService
 		
 		//assertEquals() methods checks that the two objects are equals or not.
 		// Testing by giving a expected value
-		assertEquals("PSID100 Packing LocalDate.of(2020, 02, 15) LocalDate.of(2020, 02, 25) OR100  Coke 25.0 25000.0",object.getDisplay("PSID100","Packing",LocalDate.of(2020, 02, 15),LocalDate.of(2020, 02, 15)));
+		assertEquals("PSID100 Packing LocalDate.of(2020, 02, 15) LocalDate.of(2020, 02, 25) OR100  Coke 25.0 25000.0",productServiceObject.getDisplay("PSID100","Packing",LocalDate.of(2020, 02, 15),LocalDate.of(2020, 02, 15)));
 
 		}
 	catch(NotFoundException e)
@@ -41,7 +41,7 @@ public class TestDisplayProductOrderService
 			
 			//assertEquals() methods checks that the two objects are equals or not.
 			// Testing for the null case
-			assertEquals(null,object.getDisplay("Pjjb","hgdjv",LocalDate.of(2020, 02, 15),LocalDate.of(2020, 02, 15)));
+			assertEquals(null,productServiceObject.getDisplay("Pjjb","hgdjv",LocalDate.of(2020, 02, 15),LocalDate.of(2020, 02, 15)));
 		} catch (NotFoundException e) {
 			
 		
@@ -57,12 +57,12 @@ public class TestDisplayProductOrderService
 				  
 				  NotFoundException.class,()->
 				  {
-				  object.getDisplay("Pjjb","hgdjv",LocalDate.of(2020, 02, 15),LocalDate.of(2020, 02, 15));
+				  productServiceObject.getDisplay("Pjjb","hgdjv",LocalDate.of(2020, 02, 15),LocalDate.of(2020, 02, 15));
 	              }
 				  
 				  
 		  );
-		  	assertEquals(null,exception.getMessage());
+		  	assertEquals(" DistributorID & Delivery Status are Not Found",exception.getMessage());
 	  }
 	 
 	 
@@ -70,14 +70,14 @@ public class TestDisplayProductOrderService
 	 @Test
 	 public void testDate()
 	 {
-		 assertTrue(object.validate("2020-02-15"));
+		 assertTrue(productServiceObject.validate("2020-02-15"));
 		 
 	 }
 	 
 	 @Test
 	 public void testDate2()
 	 {
-		 assertFalse(object.validate("2020/02/15"));
+		 assertFalse(productServiceObject.validate("2020/02/15"));
 		 
 	 }
 }

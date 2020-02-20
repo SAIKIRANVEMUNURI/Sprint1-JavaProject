@@ -17,7 +17,9 @@ public class MainController {
 
 	public static void main(String[] args) 
 	{
-		kiran:while(true)
+		Scanner scanner=new Scanner(System.in);
+
+		control1:while(true)
 		{
 		System.out.println("<==============WELCOME TO DRINKS & DELIGHT=============>");
 		System.out.println("Enter Digit to get Details:-");
@@ -25,143 +27,154 @@ public class MainController {
 		System.out.println("2->Display Product Orders:");
 		System.out.println("3->Dsiplay Supplier Details:");
 		System.out.println("4->Terminate");
-		Scanner sc=new Scanner(System.in);
-		int a=sc.nextInt();
 		
-		switch(a) 
+		int input=scanner.nextInt();
+		
+		switch(input) 
 		
 		{
 		case 1:
 			
-			DisplayRawMaterialOrderDetailsService object=new DisplayRawMaterialOrderDetailsService();
+			DisplayRawMaterialOrderDetailsService rawServiceObject=new DisplayRawMaterialOrderDetailsService();
 			System.out.println("<=====TO DISPLAY RAWMATERIAL ORDER DETAILS====>");
 			System.out.println("Enter Supplier ID:");
-			Scanner scan1 =new Scanner(System.in);
-			String r=scan1.next();
+			String supplierId=scanner.next();
 			System.out.println("Enter Delivery Status:");
-			Scanner scan2 =new Scanner(System.in);
-			String t=scan2.next();
+			String deliveryStatus=scanner.next();
 			System.out.println("Enter StartDate (yyyy-mm-dd):");
 			LocalDate strDate=null;
-
 			while(true)
 			{
-			Scanner scan3 =new Scanner(System.in);
-			String u=scan3.next();
-			if(object.validate(u)) {
-				strDate=LocalDate.parse(u);
-				break;
+			String inputStrDate1=scanner.next();
+			if(rawServiceObject.validate(inputStrDate1)) 
+			{
+			strDate=LocalDate.parse(inputStrDate1);
+			break;
 			}
-			else {
-				System.out.println("Enter the StartDate in Correct Format(yyyy-mm-dd):");
+			else 
+			{
+			System.out.println("Enter the StartDate in Correct Format(yyyy-mm-dd):");
 			}
 			continue;
 			}
-			
-			
-			
-
 			System.out.println("Enter EndDate (yyyy-mm-dd):");
-			Scanner sc3 =new Scanner(System.in);
-			String v=sc3.next();
-			LocalDate enDate=LocalDate.parse(v);
-			Set<DisplayRawMaterialOrderDetailsDto> obj=null;
+			LocalDate endDate=null;
+			while(true)
+			{
+			String inputEndDate1=scanner.next();
+			if(rawServiceObject.validate(inputEndDate1)) 
+			{
+			endDate=LocalDate.parse(inputEndDate1);
+			break;
+			}
+			else 
+			{
+			System.out.println("Enter the EndDate in Correct Format(yyyy-mm-dd):");
+			}
+			continue;
+			}		
+			Set<DisplayRawMaterialOrderDetailsDto> rawMaterialDtoObject=null;
 			try 
-				{
-					obj=object.getDisplay(r, t,strDate,enDate);
-				}
+			{
+			rawMaterialDtoObject=rawServiceObject.getDisplay(supplierId, deliveryStatus,strDate,endDate);
+			}
 			catch(NotFoundException e)
 			{
-				e.printLog();
+			System.out.println(e.getMessage());
 			}
-			if(obj!=null)
-			 System.out.println(obj);
-			continue;
+			if(rawMaterialDtoObject!=null)
+			System.out.println(rawMaterialDtoObject);
+				continue;
 			
 		case 2:
 			
-			DisplayProductOrderDetailsService object2=new DisplayProductOrderDetailsService();
+			DisplayProductOrderDetailsService productServiceObject=new DisplayProductOrderDetailsService();
 			System.out.println("<====TO DISPLAY PRODUCT ORDER DETAILS====>");
 			System.out.println("Enter DistributorID:");
-			Scanner scc =new Scanner(System.in);
-			String rrrr=scc.next();
+			String supplierId1=scanner.next();
 			System.out.println("Enter Delivery Status:");
-			Scanner sc11 =new Scanner(System.in);
-			String tttt=sc11.next();
+			String deliveryStatus1=scanner.next();
 			System.out.println("Enter StartDate (yyyy-mm-dd):");
-			LocalDate d1=null;
-
+			LocalDate strDate1=null;
 			while(true)
 			{
-
-			Scanner sc22 =new Scanner(System.in);
-			String uu=sc22.next();
-//		
-			if(object2.validate(uu)) {
-				d1=LocalDate.parse(uu);
-				break;
+			String inputStrDate=scanner.next();
+			if(productServiceObject.validate(inputStrDate)) 
+			{
+			strDate1=LocalDate.parse(inputStrDate);
+			break;
 			}
-			else {
-				System.out.println("Enter the StartDate in Correct Format(yyyy-mm-dd):");
+			else 
+			{
+			System.out.println("Enter the StartDate in Correct Format(yyyy-mm-dd):");
 			}
 			continue;
 			}
-			
-			  
 			System.out.println("Enter EndDate  (yyyy-mm-dd):");
-			Scanner sc33 =new Scanner(System.in);
-			String vv=sc33.next();
-			LocalDate dd2=LocalDate.parse(vv);
-			Set<DisplayProductOrderDetailsDto> obj2=null;
+			LocalDate endDate1=null;
+			while(true)
+			{
+			String inputEndDate=scanner.next();
+			if(productServiceObject.validate(inputEndDate)) 
+			{
+			endDate1=LocalDate.parse(inputEndDate);
+			break;
+			}
+			else
+			{
+			System.out.println("Enter the EndDate in Correct Format(yyyy-mm-dd):");
+			}
+			continue;
+			}
+			Set<DisplayProductOrderDetailsDto> productDtoObject=null;
 			try 
 			{
-				obj2=object2.getDisplay(rrrr, tttt,d1,dd2);
+			productDtoObject=productServiceObject.getDisplay(supplierId1, deliveryStatus1,strDate1,endDate1);
 			}
 			catch(NotFoundException e)
 			{ 
-				e.printLog();
+			System.out.println(e.getMessage());
 			}
 			
-			if(obj2!=null)
+			if(productDtoObject!=null)
 			System.out.println("<===PRODUCT ORDER DETAILS===>");
-			System.out.print(obj2);
-			continue;
+			System.out.print(productDtoObject);
+				continue;
 			
 		case 3:
 			
 	
-			Scanner scan=new Scanner(System.in);
-			DisplaySupplierDetailsService obj3=new  DisplaySupplierDetailsService();
+			DisplaySupplierDetailsService supplierServiceObject3=new  DisplaySupplierDetailsService();
 			System.out.println("<===AVAILABLE SUPPLIER ID'S===>");
-			System.out.println(obj3.getId());
-			sai:while (true)
-				{
+			System.out.println(supplierServiceObject3.getId());
+			control2:while (true)
+			{
 			System.out.println("Enter the Supplier ID:");
-			int id=scan.nextInt();
+			int supplierId2=scanner.nextInt();
 			System.out.println("<===SUPPLIER DEATAILS===>");
 			try 
-				{
-					System.out.println(obj3.getSipplierDetailsDetails(id));
-				}
+			{
+			System.out.println(supplierServiceObject3.getSipplierDetailsDetails(supplierId2));
+			}
 			catch(NoDataFoundException e)
-				{
-					System.out.println(e);
-				}
+			{
+			System.out.println(e.getMessage());
+			}
 			System.out.println("Enter 1 to See More & Enter  2 to Exit:");
-			int b=scan.nextInt();
-			if(b==1)
-				continue sai;
+			int input2=scanner.nextInt();
+			if(input2==1)
+			continue control2;
 			else
-				break sai;
-				}
-			continue;
+			break control2;
+			}
+				continue;
 		
 		   
 		 case 4:
-			break;
-			}
+			 	break;
+				}
 
-			break;	
+				break;	
 
 		}
 	}

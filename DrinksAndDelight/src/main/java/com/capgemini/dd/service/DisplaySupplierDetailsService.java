@@ -7,12 +7,12 @@ import com.capgemini.dd.exceptions.NoDataFoundException;
 public class DisplaySupplierDetailsService
 {
 
-	DisplaySupplierDetailsDao obj=new DisplaySupplierDetailsDao();
+	DisplaySupplierDetailsDao supplierDaoObject=new DisplaySupplierDetailsDao();
     
 	List<Integer>IdList=new ArrayList<Integer>();
     public List<Integer> getId()
 	{
-		 IdList=obj.getId();
+		 IdList=supplierDaoObject.getId();
 		 return IdList;
 	}
     
@@ -30,7 +30,7 @@ public class DisplaySupplierDetailsService
 			if(i==orderId)
 			{
 				
-			 result= obj.getDisplaySupplierDetailsDao(orderId);
+			 result= supplierDaoObject.getDisplaySupplierDetailsDao(orderId);
 			
 			}
 		

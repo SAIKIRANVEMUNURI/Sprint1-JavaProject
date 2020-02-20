@@ -14,7 +14,7 @@ import com.capgemini.dd.service.DisplayRawMaterialOrderDetailsService;
 
 public class TestDisplayRawMaterialOrderService 
 {
-	DisplayRawMaterialOrderDetailsService object=new DisplayRawMaterialOrderDetailsService();
+	DisplayRawMaterialOrderDetailsService rawMaterialServiceObject=new DisplayRawMaterialOrderDetailsService();
 	
 	@Test
 	public void testGetRawService()
@@ -24,7 +24,10 @@ public class TestDisplayRawMaterialOrderService
 		
 		//assertEquals() methods checks that the two objects are equals or not.
 		// Testing by giving a expected value
-		assertEquals("PSID100 Packing LocalDate.of(2020, 02, 15) LocalDate.of(2020, 02, 25) OR100  Coke 25.0 25000.0",object.getDisplay("PSID100","Packing",LocalDate.of(2020, 02, 15),LocalDate.of(2020, 02, 15)));
+		assertEquals("[DisplayRawMaterialOrderDetailsDto [supplierId2=PSID100, deliveryStatus2=Dispatch, startDate2=2020-02-15, endDate2=2020-02-25, orderId2= OR100, productName2=Coke, numberOfUnits2=25.0, price2=25000.0]\r\n" + 
+				", DisplayRawMaterialOrderDetailsDto [supplierId2=PSID100, deliveryStatus2=Dispatch, startDate2=2020-02-15, endDate2=2020-02-25, orderId2=OR103, productName2=ThumsUp, numberOfUnits2=25.0, price2=25000.0]\r\n" + 
+				", DisplayRawMaterialOrderDetailsDto [supplierId2=PSID100, deliveryStatus2=Dispatch, startDate2=2020-02-15, endDate2=2020-02-20, orderId2= OR104, productName2=Fanta, numberOfUnits2=25.0, price2=25000.0]\r\n" + 
+				"]",rawMaterialServiceObject.getDisplay("PSID100","Packing",LocalDate.of(2020, 02, 15),LocalDate.of(2020, 02, 15)));
 		}
 	catch(NotFoundException e)
 	{
@@ -41,7 +44,7 @@ public class TestDisplayRawMaterialOrderService
 			
 			//assertEquals() methods checks that the two objects are equals or not.
 			// Testing for the null case
-			assertEquals(null,object.getDisplay("Pjjb","hgdjv",LocalDate.of(2020, 02, 15),LocalDate.of(2020, 02, 15)));
+			assertEquals(null,rawMaterialServiceObject.getDisplay("Pjjb","hgdjv",LocalDate.of(2020, 02, 15),LocalDate.of(2020, 02, 15)));
 		} catch (NotFoundException e) {
 			
 		
@@ -58,26 +61,26 @@ public class TestDisplayRawMaterialOrderService
 			  
 			  NotFoundException.class,()->
 			  {
-			  object.getDisplay("Pjjb","hgdjv",LocalDate.of(2020, 02, 15),LocalDate.of(2020, 02, 15));
+			  rawMaterialServiceObject.getDisplay("Pjjb","hgdjv",LocalDate.of(2020, 02, 15),LocalDate.of(2020, 02, 15));
              }
 			  
 			  
 	  );
-	 	assertEquals(null,exception.getMessage());
+	 	assertEquals(" SupplierID & Delivery Status are Not Found",exception.getMessage());
  }
 
 
 @Test
 public void testDate()
 {
-	 assertTrue(object.validate("2020-02-15"));
+	 assertTrue(rawMaterialServiceObject.validate("2020-02-15"));
 	 
 }
 
 @Test
 public void testDate2()
 {
-	 assertFalse(object.validate("2020/02/15"));
+	 assertFalse(rawMaterialServiceObject.validate("2020/02/15"));
 	 
 }
 

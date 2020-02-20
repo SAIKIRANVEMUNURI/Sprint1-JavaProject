@@ -25,21 +25,17 @@ public class DisplaySupplierDetailsDto
 	public int getSupplierID() {
 		return supplierID;
 	}
-	public void setSupplierID(int supplierID) {
-		this.supplierID = supplierID;
-	}
+	
+	
 	public String getSupplierName() {
 		return supplierName;
 	}
-	public void setSupplierName(String supplierName) {
-		this.supplierName = supplierName;
-	}
+	
+	
 	public String getAddress() {
 		return address;
 	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
+	
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}

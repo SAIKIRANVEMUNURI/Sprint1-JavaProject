@@ -38,51 +38,13 @@ public class DisplayProductOrderDetailsDto
 	public String getSupplierId1() {
 		return distributorId;
 	}
-	public void setSupplierId1(String distributorId) {
-		this.distributorId = distributorId;
-	}
+
 	public String getDeliveryStatus() {
 		return deliveryStatus;
 	}
-	public void setDeliveryStatus(String deliveryStatus) {
-		this.deliveryStatus = deliveryStatus;
-	}
-	public LocalDate getStartDate() {
-		return startDate;
-	}
-	public void setStartDate(LocalDate startDate) {
-		this.startDate = startDate;
-	}
-	public LocalDate getEndDate() {
-		return endDate;
-	}
-	public void setEndDate(LocalDate endDate) {
-		this.endDate = endDate;
-	}
-	public String getOrderId() {
-		return orderId;
-	}
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-	}
-	public String getProductName() {
-		return productName;
-	}
-	public void setProductName(String productName) {
-		this.productName = productName;
-	}
-	public double getNumberOfUnits() {
-		return numberOfUnits;
-	}
-	public void setNumberOfUnits(double numberOfUnits) {
-		this.numberOfUnits = numberOfUnits;
-	}
-	public double getPrice() {
-		return price;
-	}
-	public void setPrice(double price) {
-		this.price = price;
-	}
+	
+	
+	
 	@Override
 	public String toString() {
 		return "DisplayProductOrderDetailsDto [distributorId=" + distributorId + ", deliveryStatus=" + deliveryStatus

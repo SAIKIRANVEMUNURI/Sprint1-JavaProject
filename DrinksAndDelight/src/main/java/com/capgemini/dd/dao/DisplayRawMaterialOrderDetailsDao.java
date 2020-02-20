@@ -12,7 +12,7 @@ import com.capgemini.dd.util.Repository;
 public class DisplayRawMaterialOrderDetailsDao
 {
 	
-	Repository object2 = new Repository();
+	Repository repositoryObject = new Repository();
 	
 	//Creating a Set collection
 	Set<DisplayRawMaterialOrderDetailsDto> list2= new LinkedHashSet<DisplayRawMaterialOrderDetailsDto>();
@@ -20,8 +20,8 @@ public class DisplayRawMaterialOrderDetailsDao
 	// creating a getRawMaterialDisplay and calling a method from Repository
 	public Set<DisplayRawMaterialOrderDetailsDto> getRawMaterialDisplay(String a, String b,LocalDate c,LocalDate d) throws NotFoundException
 	{
-		object2.addingDisplayRawMaterialOrderDetails();
-		Map<Integer,DisplayRawMaterialOrderDetailsDto> map2=object2.getDisplayRawMaterialOrderDetails();
+		repositoryObject.addingDisplayRawMaterialOrderDetails();
+		Map<Integer,DisplayRawMaterialOrderDetailsDto> map2=repositoryObject.getDisplayRawMaterialOrderDetails();
 		int count=0;
 		for(Map.Entry<Integer,DisplayRawMaterialOrderDetailsDto> map:map2.entrySet())
 		

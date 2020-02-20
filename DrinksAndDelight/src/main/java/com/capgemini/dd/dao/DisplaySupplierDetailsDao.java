@@ -10,17 +10,17 @@ import com.capgemini.dd.util.SupplierRepository;
 public class DisplaySupplierDetailsDao
 {
 	
-	SupplierRepository objectRepo;
-	Map<Integer,DisplaySupplierDetailsDto> repomap;
+	SupplierRepository supplierRepositoryObject;
+	Map<Integer,DisplaySupplierDetailsDto> repositoryMapObject;
 	public DisplaySupplierDetailsDao()
 	{
-		repomap=SupplierRepository.get();
+		repositoryMapObject=SupplierRepository.get();
 	}
 	
 	public List<Integer> getId()
 	{
 		List<Integer> list2= new ArrayList<Integer>();
-		for(Map.Entry<Integer,DisplaySupplierDetailsDto> obj:repomap.entrySet())
+		for(Map.Entry<Integer,DisplaySupplierDetailsDto> obj:repositoryMapObject.entrySet())
 		{
 			list2.add(obj.getKey());
 		}
@@ -31,7 +31,7 @@ public class DisplaySupplierDetailsDao
 	public String getDisplaySupplierDetailsDao(Integer id)
 	{
 		String result=null;
-		for(Map.Entry<Integer,DisplaySupplierDetailsDto> obj:repomap.entrySet())
+		for(Map.Entry<Integer,DisplaySupplierDetailsDto> obj:repositoryMapObject.entrySet())
 		{
 			if(id==obj.getKey())
 			{

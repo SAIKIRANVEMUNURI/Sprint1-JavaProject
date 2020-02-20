@@ -13,14 +13,14 @@ import com.capgemini.dd.service.DisplaySupplierDetailsService;
 
 public class TestDisplaySupplierDetailsService
 {
-	DisplaySupplierDetailsService objectService= new DisplaySupplierDetailsService();
+	DisplaySupplierDetailsService supplierServiceObject= new DisplaySupplierDetailsService();
 	Integer List[] = {6,5,4,3,2,1};
 	
 	@Test
 	
 	public void testGetId()
 	{
-		List<Integer> list = objectService.getId();
+		List<Integer> list = supplierServiceObject.getId();
 		assertArrayEquals(List,list.toArray());
 
 	
@@ -34,7 +34,7 @@ public class TestDisplaySupplierDetailsService
 	  {
 		 try
 		 {
-				assertEquals("1 Daring Drinks Vizag,Andhrapradesh 9592939955",objectService.getSipplierDetailsDetails(1));
+				assertEquals("1 Daring Drinks Vizag,Andhrapradesh 9592939955",supplierServiceObject.getSipplierDetailsDetails(1));
 
 		 }
 		 catch(NoDataFoundException e)
@@ -54,7 +54,7 @@ public class TestDisplaySupplierDetailsService
 				  
 				  NoDataFoundException.class,()->
 				  {
-				  objectService.getSipplierDetailsDetails(9);
+				  supplierServiceObject.getSipplierDetailsDetails(9);
 	              }
 				  
 				  
