@@ -173,6 +173,7 @@ public class MainController {
 		 case 4:
 			 	break;
 				}
+		scanner.close();
 
 				break;	
 
